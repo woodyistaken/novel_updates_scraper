@@ -76,35 +76,35 @@ class Search():
         self.sort=sort
         self.sort_type=sort_type
     
-    def get_language_query(self):
+    def _get_language_query(self):
         return ",".join(self.languages)
     
-    def get_novel_type_query(self):
+    def _get_novel_type_query(self):
         return ",".join(self.novel_types)
 
-    def get_first_release_date_query(self):
+    def _get_first_release_date_query(self):
         return self.first_release_date.strftime("%m/%d/%Y") if self.first_release_date else None
 
-    def get_last_release_date_query(self):
+    def _get_last_release_date_query(self):
         return self.last_release_date.strftime("%m/%d/%Y") if self.last_release_date else None
 
-    def get_included_genres_query(self):
+    def _get_included_genres_query(self):
         return ",".join(self.included_genres)
 
-    def get_excluded_genres_query(self):
+    def _get_excluded_genres_query(self):
         return ",".join(self.excluded_genres)
 
-    def get_included_tags_query(self):
+    def _get_included_tags_query(self):
         return ",".join(self.included_tags)
 
-    def get_excluded_tags_query(self):
+    def _get_excluded_tags_query(self):
         return ",".join(self.excluded_tags)
 
     def get_query_params(self):
         params= {
             "sf":1,
-            "nt":self.get_novel_type_query(),
-            "org":self.get_language_query(),
+            "nt":self._get_novel_type_query(),
+            "org":self._get_language_query(),
 
             "rl":self.num_chapters,
             "mrl":self.num_chapters_search_type if self.num_chapters else None,
@@ -124,19 +124,19 @@ class Search():
             "rct": self.num_readers,
             "mrct": self.num_readers_search_type if self.num_readers else None,
 
-            "dtf": self.get_first_release_date_query(),
+            "dtf": self._get_first_release_date_query(),
             "mdtf": self.first_release_date_search_type if self.first_release_date else None,
 
-            "dt": self.get_last_release_date_query(),
+            "dt": self._get_last_release_date_query(),
             "mdt": self.last_release_date_search_type if self.last_release_date else None,
             
 
-            "gi":self.get_included_genres_query(),
-            "ge":self.get_excluded_genres_query(),
+            "gi":self._get_included_genres_query(),
+            "ge":self._get_excluded_genres_query(),
             "mgi":self.genres_search_type if self.included_genres or self.excluded_genres else None,
 
-            "tgi":self.get_included_tags_query(),
-            "tge":self.get_excluded_tags_query(),
+            "tgi":self._get_included_tags_query(),
+            "tge":self._get_excluded_tags_query(),
             "mtgi":self.tags_search_type if self.included_tags or self.excluded_tags else None,
 
             "sort":self.sort,
@@ -159,3 +159,4 @@ class Search():
         titles=[a.find("a").text for a in html.find_all('div',class_="search_title")][:numberOfTitles]
         return titles
     
+print(Search().get_titles())
