@@ -1,5 +1,5 @@
 ## Usage
-Request a particular list of courses and retrieve all of their data.
+Get data from novel updates website 
 
 Example:
 ```python
