@@ -6,7 +6,7 @@ from constants import BASE_URL
 class Search():
 
     def __init__(self,
-    query_words=None,
+    query_word=None,
     novel_types=[],
     languages=[],
     num_chapters=None, # int
@@ -35,7 +35,7 @@ class Search():
     sort=SORT_LAST_UPDATED,
     sort_type=SORT_DESCENDING,
     ):
-        self.query_words=query_words
+        self.query_word=query_word
         self.novel_types=novel_types
         self.languages=languages
 
@@ -142,7 +142,7 @@ class Search():
             "sort":self.sort,
             "order":self.sort_type,
 
-            "sh":self.query_words,
+            "sh":self.query_word,
         }
             
 
@@ -159,4 +159,4 @@ class Search():
         titles=[a.find("a").text for a in html.find_all('div',class_="search_title")][:numberOfTitles]
         return titles
     
-print(Search().get_titles())
+print(Search(query_word="spt").get_titles())
