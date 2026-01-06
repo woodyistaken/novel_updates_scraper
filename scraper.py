@@ -14,8 +14,6 @@ async def refresh_cf_token():
 
 def get_html(url,query_params={}):
     
-    
-    
     for i in range(5):
         headers={
             "User-Agent": session["user_agent"],

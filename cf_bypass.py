@@ -8,11 +8,8 @@ async def get_cf_clearance(url):
     browser = await uc.start()
     page = await browser.get(url)
     
-    # Wait for Cloudflare challenge to resolve
-    #await asyncio.sleep(1)
     
     ua = await page.evaluate("navigator.userAgent")
-    # Check if we passed the challenge
     cookies = await browser.cookies.get_all()
     
     cf_clearance = None
@@ -25,4 +22,3 @@ async def get_cf_clearance(url):
     
     return cf_clearance,ua
 
-# Run extraction
