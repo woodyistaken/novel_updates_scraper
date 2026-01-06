@@ -6,7 +6,7 @@ from constants import BASE_URL
 class Search():
 
     def __init__(self,
-    query_words="",
+    query_words=None,
     novel_types=[],
     languages=[],
     num_chapters=None, # int
@@ -31,6 +31,9 @@ class Search():
     included_tags=[],
     excluded_tags=[],
     tags_search_type=OR_SEARCH,
+    story_status=None,
+    sort=SORT_LAST_UPDATED,
+    sort_type=SORT_DESCENDING,
     ):
         self.query_words=query_words
         self.novel_types=novel_types
@@ -68,6 +71,10 @@ class Search():
         self.excluded_tags=excluded_tags
         self.tags_search_type=tags_search_type
 
+        self.story_status=story_status
+
+        self.sort=sort
+        self.sort_type=sort_type
     
     def get_language_query(self):
         return ",".join(self.languages)
@@ -132,8 +139,10 @@ class Search():
             "tge":self.get_excluded_tags_query(),
             "mtgi":self.tags_search_type if self.included_tags or self.excluded_tags else None,
 
-            "sort":"sdate",
-            "order":"desc",
+            "sort":self.sort,
+            "order":self.sort_type,
+
+            "sh":self.query_words,
         }
             
 
@@ -151,4 +160,4 @@ class Search():
         return titles
     
         
-print(Search(included_tags=[TAG_ABSENT_PARENTS,TAG_BANDS],excluded_tags=[TAG_ADAPTED_FROM_MANGA]).get_titles())
+print(Search(sort=SORT_FREQUENCY).get_titles())
