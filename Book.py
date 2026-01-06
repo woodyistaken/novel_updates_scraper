@@ -35,7 +35,3 @@ class Book():
 
     def __str__(self):
         return self.title
-
-print(Book.make_book("Be Careful When Installing Mods").genres)
-print(Book.make_book("In This Confinement Novel, the Maid Doesn’t Change the Original").genres)
-print(Book.make_book("Contract Marriage: Rewritten").genres)

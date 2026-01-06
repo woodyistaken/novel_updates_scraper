@@ -159,5 +159,3 @@ class Search():
         titles=[a.find("a").text for a in html.find_all('div',class_="search_title")][:numberOfTitles]
         return titles
     
-        
-print(Search(sort=SORT_FREQUENCY).get_titles())
