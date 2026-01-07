@@ -5,7 +5,7 @@ from constants import BASE_URL
 async def get_cf_clearance(url):
     """Extract cf_clearance using Nodriver stealth browser."""
     
-    browser = await uc.start()
+    browser = await uc.start(headless=True)
     page = await browser.get(url)
     
     
@@ -19,6 +19,5 @@ async def get_cf_clearance(url):
             break
     
     browser.stop()
-    
     return cf_clearance,ua
 
