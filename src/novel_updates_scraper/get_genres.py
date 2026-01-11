@@ -1,5 +1,5 @@
-from scraper import get_html
-from utils import slugify
+from .scraper import get_html
+from .utils import slugify
 
 html=get_html("https://www.novelupdates.com/series-finder/?sf=1&sort=sdate&order=desc")
 

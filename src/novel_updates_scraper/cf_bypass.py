@@ -1,6 +1,6 @@
 import nodriver as uc
 import asyncio
-from constants import BASE_URL
+from .constants import BASE_URL
 
 async def get_cf_clearance(url):
     """Extract cf_clearance using Nodriver stealth browser."""

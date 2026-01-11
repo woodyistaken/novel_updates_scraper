@@ -1,8 +1,8 @@
 from curl_cffi import requests
 from bs4 import BeautifulSoup
-from constants import BASE_URL
+from .constants import BASE_URL
 import asyncio
-from cf_bypass import get_cf_clearance
+from .cf_bypass import get_cf_clearance
 
 session = {
     "token": None,

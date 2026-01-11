@@ -1,7 +1,7 @@
-from scraper import get_html
-from query_constants import *
-from tag_constants import *
-from constants import BASE_URL
+from .scraper import get_html
+from .query_constants import *
+from .tag_constants import *
+from .constants import BASE_URL
 
 class Search():
 

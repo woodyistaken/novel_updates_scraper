@@ -1,6 +1,6 @@
-from scraper import get_html
-from utils import slugify
-from constants import BASE_URL
+from .scraper import get_html
+from .utils import slugify
+from .constants import BASE_URL
 
 class Book():
 
