@@ -158,5 +158,3 @@ class Search():
         html=self.fetch_html()
         titles=[a.find("a").text for a in html.find_all('div',class_="search_title")][:numberOfTitles]
         return titles
-    
-print(Search(query_word="spt").get_titles())

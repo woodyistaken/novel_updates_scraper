@@ -27,7 +27,6 @@ def get_html(url,query_params={}):
             impersonate="chrome",
             params=query_params
         )
-        print(res.url)
         if res.status_code!=403:
             break
         else:  

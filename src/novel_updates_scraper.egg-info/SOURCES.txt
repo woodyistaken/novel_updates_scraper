@@ -16,4 +16,5 @@ src/novel_updates_scraper/utils.py
 src/novel_updates_scraper.egg-info/PKG-INFO
 src/novel_updates_scraper.egg-info/SOURCES.txt
 src/novel_updates_scraper.egg-info/dependency_links.txt
+src/novel_updates_scraper.egg-info/requires.txt
 src/novel_updates_scraper.egg-info/top_level.txt
