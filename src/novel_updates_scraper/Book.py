@@ -10,7 +10,7 @@ class Book():
         self.tags=tags
         self.rating=rating
         self.num_ratings=num_ratings
-        self.url=_get_book_html(title)
+        self.url=self._get_book_html(title)
     
     @staticmethod
     def _get_book_html(title):

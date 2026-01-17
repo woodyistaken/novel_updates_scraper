@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: novel_updates_scraper
-Version: 0.1.4
+Version: 0.1.5
 Summary: An API to query the novel updates website 
 Author-email: Woody Aung <woodyaung2005@gmail.com>
 License-Expression: MIT
