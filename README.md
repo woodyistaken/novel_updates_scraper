@@ -11,3 +11,5 @@ search=Search(included_genres=[GENRES["GENRE_COMEDY"]])
 titles=search.get_titles(5)
 Book.make_book(titles[0])
 ```
+##Documentation
+Documentation available at https://novel-updates-scraper-docs.vercel.app/
