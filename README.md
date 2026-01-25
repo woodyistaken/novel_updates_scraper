@@ -3,9 +3,9 @@ Get data from novel updates website
 
 Example:
 ```python
-from Search import Search
-from Book import Book
-from genre_constants import *
+from novel_updates_scraper.Search import Search
+from novel_updates_scraper.Book import Book
+from novel_updates_scraper.genre_constants import *
 
 search=Search(included_genres=[GENRES["GENRE_COMEDY"]])
 titles=search.get_titles(5)
